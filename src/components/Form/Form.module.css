@@ -1,0 +1,22 @@
+.formContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.formContainer__form {
+    width: 300px;
+}
+
+.formContainer__input, .formContainer__button {
+    width: 100%;
+}
+
+.formContainer__input {
+    margin-top: 20px !important;
+}
+
+.formContainer__button {
+    margin-top: 40px !important;
+}
