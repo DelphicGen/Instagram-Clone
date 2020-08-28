@@ -4,6 +4,8 @@ import Post from './components/Post/Post';
 import {db, auth} from './firebase';
 import Form from './components/Form/Form';
 import { Button } from '@material-ui/core';
+import ImageUpload from './components/ImageUpload/ImageUpload';
+import InstagramEmbed from 'react-instagram-embed';
 
 function App() {
 
@@ -44,7 +46,7 @@ function App() {
 
   useEffect(() => {
 
-    db.collection('posts').onSnapshot(snapshot => {
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
         setPosts(snapshot.docs.map( doc => ({
           id: doc.id, 
           post: doc.data()
@@ -111,11 +113,32 @@ function App() {
                 <Button onClick={logout}>Log Out</Button>
               </div>
 
-              {
-                posts.map(({id, post}) => (
-                  <Post username={post.username} caption={post.caption} imageUrl={post.imageUrl} key={id} />
-                ))
-              }
+              
+              {/* <div className="app_post"> */}
+                <div className="app__postsLeft">
+                  {
+                    posts.map(({id, post}) => (
+                      <Post postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} key={id} />
+                    ))
+                  }
+                </div>
+                {/* <div className="app__postsRight">
+                  <InstagramEmbed
+                    url='https://instagr.am/p/Zw9o4/'
+                    maxWidth={300}
+                    minWidth={150}
+                    hideCaption={false}
+                    containerTagName='div'
+                    protocol=''
+                    injectScript
+                    onLoading={() => {}}
+                    onSuccess={() => {}}
+                    onAfterRender={() => {}}
+                    onFailure={() => {}}
+                  />
+                </div> */}
+              {/* </div> */}
+              <ImageUpload username={user.displayName} />
             </React.Fragment>
             
         ) : 

@@ -3,16 +3,15 @@
     border: 1px solid #d3d3d3;
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 60px;
 }
 
-/* .post:first-child {
-    margin-top: 60px;
-} */
+.post:first-child {
+    margin-top: 20px;
+}
 
-/* .post:not(:last-child) {
-    margin-bottom: 60px;
-} */
+.post:not(:first-child) {
+    margin-top: 60px;
+}
 
 .post__header {
     display: flex;
@@ -34,4 +33,25 @@
 .post__text {
     font-weight: normal;
     padding: 20px;
+}
+
+.post__comments {
+    padding: 0 20px;
+}
+
+.post__commentBox {
+    display: flex;
+    margin-top: 10px;
+    border-top: 1px solid #d3d3d3;
+}
+
+.post__input {
+    flex: 1;
+    border: none;
+    padding: 20px 10px;
+}
+
+.post__button {
+    flex: 0;
+    border: none;
 }

@@ -1,0 +1,33 @@
+.imageUpload {
+    display: flex;
+    flex-direction: column;
+    max-width: 476px;
+    margin: 12px auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    padding: 20px 12px;
+}
+
+.imageUpload__filePicker {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.imageUpload__progress {
+    flex-grow: 1;
+}
+
+.imageUpload__caption {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .imageUpload__filePicker {
+        flex-direction: column;
+    }
+
+    .imageUpload__progress {
+        margin-top: 20px;
+        width: 100%;
+    }
+}

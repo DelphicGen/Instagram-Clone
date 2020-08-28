@@ -15,6 +15,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Keep the aspect ratio of the image */
   object-fit: contain;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* .app_post {
+  display: flex;
+  justify-content: center;
+}
+
+.app__postsRight {
+  margin-top: 20px;
+  margin-left: 20px;
+} */
+
+@media screen and (max-width: 767px) {
+  .app__postsRight {
+    display: none;
+  }
 }
